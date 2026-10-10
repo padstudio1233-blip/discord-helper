@@ -1,18 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#17132e">
-
   <title>무료 템플릿 | PAD Studio</title>
-
-  <meta
-    name="description"
-    content="PAD Studio에서 제공하는 무료 디스코드 서버 템플릿을 만나 봐."
-  >
-
+  <meta name="description" content="PAD Studio에서 무료 디스코드 서버 템플릿을 만나고 직접 공유해 봐.">
   <style>
     :root {
       --bg: #17132e;
@@ -25,413 +18,121 @@
       --purple-hover: #9c75ff;
       --green: #80e5b0;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(104, 67, 173, 0.14),
-          transparent 35%
-        ),
-        var(--bg);
+      margin: 0; min-height: 100vh;
+      background: radial-gradient(circle at top right, rgba(104,67,173,.14), transparent 35%), var(--bg);
       color: var(--text);
-      font-family:
-        "Pretendard",
-        "Noto Sans KR",
-        "Malgun Gothic",
-        sans-serif;
+      font-family: "Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;
       line-height: 1.7;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(23, 19, 46, 0.92);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(23,19,46,.92);
+      border-bottom: 1px solid rgba(255,255,255,.08);
       backdrop-filter: blur(14px);
     }
-
     .nav-inner {
-      width: min(1120px, calc(100% - 40px));
-      min-height: 76px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      width: min(1120px, calc(100% - 40px)); min-height: 76px;
+      margin: 0 auto; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
     }
-
-    .logo {
-      font-size: 23px;
-      font-weight: 900;
-      letter-spacing: -0.8px;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: var(--purple-hover);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: white;
-    }
-
-    .page {
-      width: min(1050px, calc(100% - 40px));
-      margin: 65px auto 90px;
-    }
-
-    .page-heading {
-      margin-bottom: 30px;
-    }
-
-    .eyebrow {
-      color: #b99bff;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 8px 0 12px;
-      font-size: clamp(32px, 5vw, 46px);
-      line-height: 1.25;
-      letter-spacing: -1.5px;
-    }
-
-    .page-description {
-      max-width: 650px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
+    .logo { font-size: 23px; font-weight: 900; letter-spacing: -.8px; white-space: nowrap; }
+    .logo span { color: var(--purple-hover); }
+    .nav-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: 14px; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: white; }
+    .page { width: min(1050px, calc(100% - 40px)); margin: 65px auto 90px; }
+    .page-heading { margin-bottom: 30px; }
+    .eyebrow { color: #b99bff; font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    h1 { margin: 8px 0 12px; font-size: clamp(32px,5vw,46px); line-height: 1.25; letter-spacing: -1.5px; }
+    .page-description { max-width: 720px; margin: 0; color: var(--muted); font-size: 16px; }
     .template-card {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(25px, 5vw, 42px);
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      transition:
-        transform 0.2s,
-        border-color 0.2s,
-        background 0.2s;
+      position: relative; overflow: hidden; padding: clamp(25px,5vw,42px);
+      background: var(--panel); border: 1px solid var(--border); border-radius: 26px;
+      transition: transform .2s,border-color .2s,background .2s;
     }
-
-    .template-card:hover {
-      transform: translateY(-3px);
-      background: var(--panel-hover);
-      border-color: #69518f;
-    }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 23px;
-    }
-
+    .template-card:hover { transform: translateY(-3px); background: var(--panel-hover); border-color: #69518f; }
+    .card-top { display: flex; align-items: center; gap: 15px; margin-bottom: 23px; }
     .template-icon {
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      width: 60px;
-      height: 60px;
-      border-radius: 18px;
-      background: rgba(137, 87, 245, 0.18);
-      border: 1px solid rgba(156, 117, 255, 0.25);
-      font-size: 28px;
+      display: grid; place-items: center; flex-shrink: 0; width: 60px; height: 60px;
+      border-radius: 18px; background: rgba(137,87,245,.18);
+      border: 1px solid rgba(156,117,255,.25); font-size: 28px;
     }
-
-    .card-label {
-      display: inline-block;
-      margin-bottom: 4px;
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .template-card h2 {
-      margin: 0;
-      font-size: clamp(23px, 4vw, 30px);
-      line-height: 1.35;
-      letter-spacing: -0.8px;
-    }
-
-    .template-description {
-      max-width: 720px;
-      margin: 0 0 23px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin: 25px 0 30px;
-    }
-
-    .feature {
-      padding: 14px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.035);
-      color: #e6dff7;
-      font-size: 14px;
-    }
-
-    .feature strong {
-      display: block;
-      margin-bottom: 3px;
-      color: white;
-      font-size: 14px;
-    }
-
-    .card-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
+    .card-label { display: inline-block; margin-bottom: 4px; color: var(--green); font-size: 12px; font-weight: 800; }
+    .template-card h2 { margin: 0; font-size: clamp(23px,4vw,30px); line-height: 1.35; letter-spacing: -.8px; }
+    .template-description { max-width: 720px; margin: 0 0 23px; color: var(--muted); font-size: 16px; }
+    .feature-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 25px 0 30px; }
+    .feature { padding: 14px 16px; border: 1px solid rgba(255,255,255,.07); border-radius: 14px; background: rgba(255,255,255,.035); color: #e6dff7; font-size: 14px; }
+    .feature strong { display: block; margin-bottom: 3px; color: white; font-size: 14px; }
+    .card-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
     .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      min-height: 49px;
-      padding: 12px 23px;
-      border: 1px solid transparent;
-      border-radius: 14px;
-      background: var(--purple);
-      color: white;
-      font-weight: 750;
-      font-size: 15px;
-      cursor: pointer;
-      transition:
-        background 0.2s,
-        transform 0.2s;
+      display: inline-flex; justify-content: center; align-items: center; gap: 8px;
+      min-height: 46px; padding: 11px 20px; border: 1px solid transparent;
+      border-radius: 14px; background: var(--purple); color: white;
+      font-weight: 750; font-size: 15px; cursor: pointer;
+      transition: background .2s,transform .2s; font-family: inherit;
     }
+    .btn:hover { background: var(--purple-hover); transform: translateY(-1px); }
+    .btn:disabled { opacity: .65; cursor: wait; transform: none; }
+    .btn-secondary { background: transparent; border-color: var(--border); color: #e7defb; }
+    .btn-secondary:hover { background: rgba(255,255,255,.06); }
+    .notice { display: flex; align-items: flex-start; gap: 12px; margin-top: 22px; padding: 17px 19px; border: 1px solid rgba(156,117,255,.2); border-radius: 15px; background: rgba(137,87,245,.08); color: var(--muted); font-size: 13px; }
+    .notice strong { color: white; }
+    .guide-card { margin-top: 28px; padding: 26px; border: 1px solid var(--border); border-radius: 22px; background: rgba(36,30,61,.65); }
+    .guide-card h2 { margin: 0 0 8px; font-size: 22px; }
+    .guide-card > p { margin: 0 0 20px; color: var(--muted); font-size: 14px; }
+    .steps { display: grid; gap: 15px; padding: 0; margin: 0; list-style: none; counter-reset: step; }
+    .steps li { display: flex; align-items: flex-start; gap: 13px; color: #ddd5ee; font-size: 14px; counter-increment: step; }
+    .steps li::before { content: counter(step); display: grid; place-items: center; flex-shrink: 0; width: 29px; height: 29px; border-radius: 10px; background: rgba(137,87,245,.2); color: #d4c1ff; font-weight: 800; }
+    .back-link { display: inline-block; margin-top: 28px; color: #e9e1fa; font-size: 15px; transition: color .2s; }
+    .back-link:hover { color: var(--purple-hover); }
+    footer { padding: 25px 20px; border-top: 1px solid rgba(255,255,255,.08); color: #9389ae; text-align: center; font-size: 13px; }
+    .toast { position: fixed; right: 20px; bottom: 20px; z-index: 20; max-width: calc(100% - 40px); padding: 13px 18px; border: 1px solid var(--border); border-radius: 13px; background: #30264b; color: white; box-shadow: 0 12px 35px rgba(0,0,0,.25); opacity: 0; transform: translateY(10px); pointer-events: none; transition: .2s; }
+    .toast.show { opacity: 1; transform: translateY(0); }
 
-    .btn:hover {
-      background: var(--purple-hover);
-      transform: translateY(-1px);
+    /* 커뮤니티 게시판 */
+    .board-login { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 18px 0; }
+    .board-login .btn { width: auto; }
+    .board-status { color: var(--muted); font-size: 14px; }
+    .template-form { display: grid; gap: 10px; margin: 22px 0; padding: 20px; background: rgba(255,255,255,.035); border: 1px solid var(--border); border-radius: 16px; }
+    .template-form label { font-weight: 700; color: #e9e1fa; margin-top: 4px; }
+    .template-form input, .template-form select, .template-form textarea {
+      width: 100%; padding: 12px 14px; border: 1px solid var(--border);
+      border-radius: 10px; background: #17132e; color: var(--text);
+      font: inherit; min-width: 0;
     }
-
-    .btn-secondary {
-      background: transparent;
-      border-color: var(--border);
-      color: #e7defb;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .notice {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-top: 22px;
-      padding: 17px 19px;
-      border: 1px solid rgba(156, 117, 255, 0.2);
-      border-radius: 15px;
-      background: rgba(137, 87, 245, 0.08);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .notice strong {
-      color: white;
-    }
-
-    .guide-card {
-      margin-top: 28px;
-      padding: 26px;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      background: rgba(36, 30, 61, 0.65);
-    }
-
-    .guide-card h2 {
-      margin: 0 0 8px;
-      font-size: 22px;
-    }
-
-    .guide-card > p {
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .steps {
-      display: grid;
-      gap: 15px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      counter-reset: step;
-    }
-
-    .steps li {
-      display: flex;
-      align-items: flex-start;
-      gap: 13px;
-      color: #ddd5ee;
-      font-size: 14px;
-      counter-increment: step;
-    }
-
-    .steps li::before {
-      content: counter(step);
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      width: 29px;
-      height: 29px;
-      border-radius: 10px;
-      background: rgba(137, 87, 245, 0.2);
-      color: #d4c1ff;
-      font-weight: 800;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 28px;
-      color: #e9e1fa;
-      font-size: 15px;
-      transition: color 0.2s;
-    }
-
-    .back-link:hover {
-      color: var(--purple-hover);
-    }
-
-    footer {
-      padding: 25px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      color: #9389ae;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    .toast {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 20;
-      max-width: calc(100% - 40px);
-      padding: 13px 18px;
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      background: #30264b;
-      color: white;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-      opacity: 0;
-      transform: translateY(10px);
-      pointer-events: none;
-      transition: 0.2s;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .template-form textarea { resize: vertical; }
+    .community-template-list { display: grid; gap: 14px; margin-top: 20px; }
+    .community-template { padding: 20px; border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.035); overflow-wrap: anywhere; }
+    .community-template h3 { margin: 8px 0; font-size: 20px; }
+    .community-template p { color: var(--muted); white-space: pre-wrap; margin: 8px 0 15px; }
+    .template-meta { color: #b99bff; font-size: 13px; }
+    .community-template .btn { width: auto; margin: 5px 8px 0 0; }
+    #boardMessage { color: var(--green); overflow-wrap: anywhere; font-size: 14px; }
+    [hidden] { display: none !important; }
     @media (max-width: 650px) {
-      .nav-inner {
-        width: min(100% - 28px, 1120px);
-        min-height: 68px;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px 0;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      .nav-links {
-        gap: 15px;
-      }
-
-      .nav-links a {
-        font-size: 12px;
-      }
-
-      .page {
-        width: calc(100% - 28px);
-        margin-top: 40px;
-        margin-bottom: 60px;
-      }
-
-      .feature-list {
-        grid-template-columns: 1fr;
-      }
-
-      .card-actions {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .template-card {
-        border-radius: 21px;
-      }
+      .nav-inner { width: min(100% - 28px,1120px); min-height: 68px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; padding: 12px 0; }
+      .logo { font-size: 21px; }
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 12px; }
+      .page { width: calc(100% - 28px); margin-top: 40px; margin-bottom: 60px; }
+      .feature-list { grid-template-columns: 1fr; }
+      .card-actions { align-items: stretch; flex-direction: column; }
+      .card-actions .btn { width: 100%; }
+      .template-card { border-radius: 21px; }
+      .board-login { align-items: stretch; flex-direction: column; }
+      .board-login .btn, .community-template .btn { width: 100%; }
     }
   </style>
 </head>
-
 <body>
   <header class="navbar">
     <nav class="nav-inner" aria-label="메인 메뉴">
-      <a class="logo" href="index.html">
-        PAD <span>Studio</span>
-      </a>
-
+      <a class="logo" href="index.html">PAD <span>Studio</span></a>
       <div class="nav-links">
         <a href="index.html">홈</a>
         <a href="free-templates.html" class="active">무료 템플릿</a>
@@ -445,170 +146,292 @@
     <section class="page-heading">
       <div class="eyebrow">PAD STUDIO / FREE</div>
       <h1>무료 템플릿</h1>
-      <p class="page-description">
-        디스코드 서버 제작을 처음 시작한다면 무료 템플릿부터 사용해 봐.
-        마음에 드는 템플릿을 선택하고 간편하게 시작할 수 있어.
-      </p>
+      <p class="page-description">디스코드 서버 제작을 처음 시작한다면 무료 템플릿부터 사용해 봐. 마음에 드는 템플릿을 선택하거나, 커뮤니티 게시판에서 다른 사람들의 템플릿을 둘러봐.</p>
     </section>
 
     <section class="template-card">
       <div class="card-top">
         <div class="template-icon" aria-hidden="true">💬</div>
-
         <div>
           <span class="card-label">FREE TEMPLATE · 01</span>
           <h2>무료 커뮤니티 서버 템플릿</h2>
         </div>
       </div>
-
-      <p class="template-description">
-        디스코드 커뮤니티 서버를 시작할 때 활용할 수 있는 템플릿이야.
-        아래 버튼을 눌러 디스코드에서 템플릿을 확인하고 서버 생성을 진행해 봐.
-      </p>
-
+      <p class="template-description">디스코드 커뮤니티 서버를 시작할 때 활용할 수 있는 템플릿이야. 아래 버튼을 눌러 디스코드에서 템플릿을 확인하고 서버 생성을 진행해 봐.</p>
       <div class="feature-list">
-        <div class="feature">
-          <strong>💬 커뮤니티 운영</strong>
-          멤버들이 대화하고 소통할 서버를 만들 때 활용해.
-        </div>
-
-        <div class="feature">
-          <strong>🧭 시작하기 간편</strong>
-          템플릿 페이지에서 내용을 확인한 뒤 생성할 수 있어.
-        </div>
-
-        <div class="feature">
-          <strong>🛠️ 직접 수정 가능</strong>
-          서버를 만든 뒤 목적에 맞게 채널과 역할을 정리해 봐.
-        </div>
-
-        <div class="feature">
-          <strong>🆓 무료 템플릿</strong>
-          PAD Studio에서 소개하는 무료 템플릿이야.
-        </div>
+        <div class="feature"><strong>💬 커뮤니티 운영</strong>멤버들이 대화하고 소통할 서버를 만들 때 활용해.</div>
+        <div class="feature"><strong>🧭 시작하기 간편</strong>템플릿 페이지에서 내용을 확인한 뒤 생성할 수 있어.</div>
+        <div class="feature"><strong>🛠️ 직접 수정 가능</strong>서버를 만든 뒤 목적에 맞게 채널과 역할을 정리해 봐.</div>
+        <div class="feature"><strong>🆓 무료 템플릿</strong>PAD Studio에서 소개하는 무료 템플릿이야.</div>
       </div>
-
       <div class="card-actions">
-        <a
-          class="btn"
-          href="https://discord.new/sG596t3MXec5"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          템플릿 사용하기 ↗
-        </a>
+        <a class="btn" href="https://discord.new/sG596t3MXec5" target="_blank" rel="noopener noreferrer">템플릿 사용하기 ↗</a>
+        <button class="btn btn-secondary" id="copyLink" type="button">링크 복사</button>
+      </div>
+      <div class="notice"><span aria-hidden="true">ℹ️</span><div><strong>알아둘 점</strong><br>템플릿 적용 과정은 디스코드에서 진행돼. 서버를 생성하기 전에 템플릿 미리보기를 확인하고 표시되는 안내를 따라가면 돼.</div></div>
+    </section>
 
-        <button
-          class="btn btn-secondary"
-          id="copyLink"
-          type="button"
-        >
-          링크 복사
-        </button>
+    <section class="guide-card" id="community-board">
+      <h2>🌐 커뮤니티 템플릿 게시판</h2>
+      <p>디스코드 계정으로 로그인해서 템플릿을 공유해 봐. 등록된 템플릿은 다른 방문자도 볼 수 있어.</p>
+      <div class="board-login">
+        <span class="board-status" id="loginStatus">로그인 상태를 확인하는 중...</span>
+        <button class="btn" id="loginButton" type="button">Discord로 로그인</button>
+        <button class="btn btn-secondary" id="logoutButton" type="button" hidden>로그아웃</button>
       </div>
 
-      <div class="notice">
-        <span aria-hidden="true">ℹ️</span>
-        <div>
-          <strong>알아둘 점</strong><br>
-          템플릿 적용 과정은 디스코드에서 진행돼.
-          서버를 생성하기 전에 템플릿 미리보기를 확인하고,
-          표시되는 안내를 따라가면 돼.
-        </div>
-      </div>
+      <form id="templateForm" class="template-form" hidden>
+        <label for="templateTitle">템플릿 제목</label>
+        <input id="templateTitle" maxlength="100" minlength="3" required placeholder="예: 게임 커뮤니티 서버">
+        <label for="templateCategory">분류</label>
+        <select id="templateCategory" required>
+          <option value="커뮤니티">커뮤니티</option>
+          <option value="게임">게임</option>
+          <option value="군사·그룹">군사·그룹</option>
+          <option value="팬 서버">팬 서버</option>
+          <option value="기타">기타</option>
+        </select>
+        <label for="templateDescription">설명</label>
+        <textarea id="templateDescription" maxlength="2000" rows="4" required placeholder="어떤 템플릿인지 설명해 줘."></textarea>
+        <label for="templateUrl">디스코드 템플릿 링크</label>
+        <input id="templateUrl" type="url" required placeholder="https://discord.new/템플릿코드">
+        <button class="btn" id="publishButton" type="submit">템플릿 게시하기</button>
+      </form>
+
+      <p id="boardMessage" role="status" aria-live="polite"></p>
+      <div id="templateList" class="community-template-list"><p class="board-status">게시글을 불러오는 중...</p></div>
     </section>
 
     <section class="guide-card">
       <h2>템플릿 사용 방법</h2>
       <p>아래 순서대로 진행하면 돼.</p>
-
       <ol class="steps">
-        <li>
-          <span>
-            <strong>템플릿 사용하기</strong><br>
-            위쪽의 보라색 버튼을 눌러 디스코드 템플릿 페이지를 열어.
-          </span>
-        </li>
-
-        <li>
-          <span>
-            <strong>미리보기 확인하기</strong><br>
-            템플릿의 구성과 디스코드에서 표시하는 안내를 확인해.
-          </span>
-        </li>
-
-        <li>
-          <span>
-            <strong>디스코드에서 서버 생성하기</strong><br>
-            화면에 나오는 절차를 따라 서버 생성을 진행해.
-          </span>
-        </li>
-
-        <li>
-          <span>
-            <strong>서버 설정 정리하기</strong><br>
-            서버 목적에 맞게 채널, 역할, 권한을 확인하고 필요한 설정을 수정해.
-          </span>
-        </li>
+        <li><span><strong>템플릿 사용하기</strong><br>위쪽의 보라색 버튼을 눌러 디스코드 템플릿 페이지를 열어.</span></li>
+        <li><span><strong>미리보기 확인하기</strong><br>템플릿의 구성과 디스코드에서 표시하는 안내를 확인해.</span></li>
+        <li><span><strong>디스코드에서 서버 생성하기</strong><br>화면에 나오는 절차를 따라 서버 생성을 진행해.</span></li>
+        <li><span><strong>서버 설정 정리하기</strong><br>서버 목적에 맞게 채널, 역할, 권한을 확인하고 필요한 설정을 수정해.</span></li>
       </ol>
     </section>
-
-    <a class="back-link" href="index.html">
-      ← 홈페이지로 돌아가기
-    </a>
+    <a class="back-link" href="index.html">← 홈페이지로 돌아가기</a>
   </main>
 
-  <footer>
-    © <span id="year"></span> PAD Studio. All rights reserved.
-  </footer>
+  <footer>© <span id="year"></span> PAD Studio. All rights reserved.</footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <div
-    class="toast"
-    id="toast"
-    role="status"
-    aria-live="polite"
-  ></div>
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const templateUrl = "https://discord.new/sG596t3MXec5";
-    const copyButton = document.getElementById("copyLink");
+    "use strict";
+
+    const SUPABASE_URL = "https://fponznqizeebrnvftnev.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_lDEuGvBomVccJ6TfnpSL2g_lI2PM4OJ";
+    const REDIRECT_URL = "https://padstudio1233-blip.github.io/discord-helper/free-templates.html";
+
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    const loginButton = document.getElementById("loginButton");
+    const logoutButton = document.getElementById("logoutButton");
+    const loginStatus = document.getElementById("loginStatus");
+    const form = document.getElementById("templateForm");
+    const list = document.getElementById("templateList");
+    const message = document.getElementById("boardMessage");
+    const publishButton = document.getElementById("publishButton");
     const toast = document.getElementById("toast");
+    const oldCopyButton = document.getElementById("copyLink");
+    const oldTemplateUrl = "https://discord.new/sG596t3MXec5";
+    let currentUser = null;
+    let toastTimeout = null;
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    function showToast(message) {
-      toast.textContent = message;
-      toast.classList.add("show");
-
-      window.setTimeout(() => {
-        toast.classList.remove("show");
-      }, 2400);
+    function showMessage(text) {
+      message.textContent = text;
     }
 
-    copyButton.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(templateUrl);
-        showToast("템플릿 링크를 복사했어!");
-      } catch (error) {
-        const textArea = document.createElement("textarea");
-        textArea.value = templateUrl;
-        textArea.style.position = "fixed";
-        textArea.style.opacity = "0";
+    function showToast(text) {
+      toast.textContent = text;
+      toast.classList.add("show");
+      if (toastTimeout) window.clearTimeout(toastTimeout);
+      toastTimeout = window.setTimeout(() => toast.classList.remove("show"), 2400);
+    }
 
-        document.body.appendChild(textArea);
-        textArea.select();
+    function getDisplayName(user) {
+      const meta = user && user.user_metadata ? user.user_metadata : {};
+      return meta.global_name || meta.full_name || meta.username || meta.name || "Discord 사용자";
+    }
 
-        const copied = document.execCommand("copy");
-        textArea.remove();
+    function addText(parent, tag, text, className) {
+      const element = document.createElement(tag);
+      element.textContent = text == null ? "" : String(text);
+      if (className) element.className = className;
+      parent.appendChild(element);
+      return element;
+    }
 
-        if (copied) {
-          showToast("템플릿 링크를 복사했어!");
-        } else {
-          showToast("복사가 안 되면 링크 버튼을 이용해 줘.");
-        }
+    loginButton.addEventListener("click", async () => {
+      loginButton.disabled = true;
+      showMessage("디스코드 로그인 페이지로 이동할게.");
+      const { error } = await db.auth.signInWithOAuth({
+        provider: "discord",
+        options: { redirectTo: REDIRECT_URL }
+      });
+      if (error) {
+        showMessage("로그인 오류: " + error.message);
+        loginButton.disabled = false;
       }
     });
+
+    logoutButton.addEventListener("click", async () => {
+      logoutButton.disabled = true;
+      const { error } = await db.auth.signOut();
+      logoutButton.disabled = false;
+      if (error) {
+        showMessage("로그아웃 오류: " + error.message);
+        return;
+      }
+      currentUser = null;
+      await updateLoginUI();
+      showMessage("로그아웃했어.");
+    });
+
+    async function updateLoginUI() {
+      const { data, error } = await db.auth.getSession();
+      if (error) {
+        loginStatus.textContent = "로그인 상태를 확인하지 못했어.";
+        showMessage("로그인 확인 오류: " + error.message);
+        return;
+      }
+      currentUser = data.session ? data.session.user : null;
+      loginStatus.textContent = currentUser
+        ? getDisplayName(currentUser) + "으로 로그인했어."
+        : "템플릿을 게시하려면 디스코드로 로그인해 줘.";
+      loginButton.hidden = !!currentUser;
+      loginButton.disabled = false;
+      logoutButton.hidden = !currentUser;
+      form.hidden = !currentUser;
+    }
+
+    async function loadTemplates() {
+      list.replaceChildren();
+      addText(list, "p", "게시글을 불러오는 중...", "board-status");
+
+      const { data, error } = await db
+        .from("templates")
+        .select("id, title, description, category, template_url, author_name, created_at")
+        .order("created_at", { ascending: false })
+        .limit(100);
+
+      list.replaceChildren();
+
+      if (error) {
+        addText(list, "p", "게시글을 불러오지 못했어. Supabase 테이블과 읽기 정책을 확인해 줘. (" + error.message + ")", "board-status");
+        return;
+      }
+
+      if (!data || data.length === 0) {
+        addText(list, "p", "아직 게시글이 없어. 첫 번째 템플릿을 공유해 봐!", "board-status");
+        return;
+      }
+
+      for (const item of data) {
+        const card = document.createElement("article");
+        card.className = "community-template";
+        addText(card, "span", item.category || "기타", "template-meta");
+        addText(card, "h3", item.title);
+        addText(card, "p", item.description);
+        addText(card, "div", "작성자: " + (item.author_name || "Discord 사용자"), "template-meta");
+
+        const openLink = document.createElement("a");
+        openLink.className = "btn";
+        openLink.textContent = "템플릿 확인 ↗";
+        openLink.href = item.template_url;
+        openLink.target = "_blank";
+        openLink.rel = "noopener noreferrer";
+        card.appendChild(openLink);
+
+        const copyButton = document.createElement("button");
+        copyButton.type = "button";
+        copyButton.className = "btn btn-secondary";
+        copyButton.textContent = "링크 복사";
+        copyButton.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(item.template_url);
+            showToast("템플릿 링크를 복사했어!");
+          } catch {
+            showToast("복사에 실패했어. '템플릿 확인'을 눌러 줘.");
+          }
+        });
+        card.appendChild(copyButton);
+        list.appendChild(card);
+      }
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!currentUser) {
+        showMessage("먼저 디스코드로 로그인해 줍니다.");
+        return;
+      }
+
+      const title = document.getElementById("templateTitle").value.trim();
+      const category = document.getElementById("templateCategory").value;
+      const description = document.getElementById("templateDescription").value.trim();
+      const templateUrl = document.getElementById("templateUrl").value.trim();
+
+      if (title.length < 3 || title.length > 100) {
+        showMessage("제목은 3~100자로 입력해 줘.");
+        return;
+      }
+      if (!description || description.length > 2000) {
+        showMessage("설명은 1~2000자로 입력해 줘.");
+        return;
+      }
+      if (!/^https:\/\/discord\.new\/[A-Za-z0-9]+$/.test(templateUrl)) {
+        showMessage("https://discord.new/ 형식의 템플릿 링크를 입력해 줘.");
+        return;
+      }
+
+      publishButton.disabled = true;
+      publishButton.textContent = "게시하는 중...";
+      const { error } = await db.from("templates").insert({
+        title,
+        category,
+        description,
+        template_url: templateUrl,
+        author_id: currentUser.id,
+        author_name: getDisplayName(currentUser)
+      });
+      publishButton.disabled = false;
+      publishButton.textContent = "템플릿 게시하기";
+
+      if (error) {
+        showMessage("게시 실패: " + error.message);
+        return;
+      }
+
+      form.reset();
+      showMessage("템플릿을 게시했어!");
+      await loadTemplates();
+    });
+
+    oldCopyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(oldTemplateUrl);
+        showToast("템플릿 링크를 복사했어!");
+      } catch {
+        showToast("복사할 수 없어. 템플릿 사용하기 버튼을 눌러 줘.");
+      }
+    });
+
+    db.auth.onAuthStateChange((event, session) => {
+      currentUser = session ? session.user : null;
+      window.setTimeout(() => updateLoginUI(), 0);
+    });
+
+    async function startBoard() {
+      await updateLoginUI();
+      await loadTemplates();
+    }
+
+    startBoard();
   </script>
 </body>
 </html>
